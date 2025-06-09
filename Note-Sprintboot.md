@@ -92,7 +92,7 @@ Biến ở trong đường dẫn có 2 cách thể hiện:
 
 
 ![alt text](image-6.png)
-@RequestBody => VD: mình muốn post 1 quyển sách lên và mình muốn truyền dữ liệu theo kiểu Json thì dùng @RequestBody 
+@RequestBody => Lấy dữ liệu JSON từ body của request và chuyển thành object Java VD: mình muốn post 1 quyển sách lên và mình muốn truyền dữ liệu theo kiểu Json thì dùng @RequestBody 
 ![alt text](image-7.png)
 
 ![alt text](image-10.png)  **ReponseEntity**: biến dữ liệu thô thành dạng Json. Để đảm bảo dữ liệu mà service trả về phải đúng là dữ liệu book thì phải để ResponseEntity<Book> để nó chỉ nhận duy nhất  kiểu dữ liệu Book 
@@ -102,3 +102,29 @@ Biến ở trong đường dẫn có 2 cách thể hiện:
 
 
 ![alt text](image-11.png) Dữ liệu trả về .body(book); trả về dạng Json.
+
+# Buổi 4
+## Object 
+![alt text](image-12.png)
+### model
+![alt text](image-15.png)
+Model thường là đối tượng gắn với cơ sở dữ liệu
+
+Model Mapping với bảng trong DB.
+
+Có 2 hướng để tạo model:
+* code first: thiết kế class java trương => mapping với các bảng CSDL
+* DB first: xây dựng CSDL trước => xây dựng class phù hợp với CSDL.
+### POJO (plan old java object)
+* Là một class Java thuần túy, không phụ thuộc vào bất kỳ framework nào (Spring, Hibernate...).
+* Chỉ chứa các thuộc tính, getter/setter, constructor và không chứa logic phức tạp.
+* POJO có thể = model.
+### DTO (data transfer object)
+![alt text](image-13.png)
+Tạo 1 trung gian để nhận gửi dữ liệu giữa controller với service
+![alt text](image-14.png) 
+### Bean
+![alt text](image-18.png)
+![](image-19.png)
+* Bean scope: số bean của dependency đưuocj tạo trong vòng đười của trương trình:
+![alt text](image-20.png)
